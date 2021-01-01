@@ -1,0 +1,55 @@
+# DJANGO REST FRAMEWORK + ZAPPA + MYSQL
+
+Restful Serverless System with Zappa
+
+- Python 3.8.6
+- [Django](https://docs.djangoproject.com/) 3.1.4
+- [Django Rest Framework](https://www.django-rest-framework.org/) 3.12.2
+- [Zappa](https://github.com/Miserlou/Zappa) 0.52.0
+
+# initial setup
+
+0. Input credential information into `~/.aws/credentials` file from AWS IAM
+   (or if aws cli is installed, run `aws configure`)
+    ```text
+    [zappa]
+    aws_access_key_id = <AWS access key id>
+    aws_secret_access_key = <AWS secret access key>
+    ```
+1. Make database and get endpoint
+2. Make S3 bucket and allow public access (or use cloud front for cdn)
+
+```shell script
+pip install -r requirements.txt
+zappa init
+python ./setup.py
+zappa deploy <my-zappa-stage>
+zappa manage <my-zappa-stage> "collectstatic --noinput"
+```
+
+# Update deployed code
+
+```shell script
+zappa update <my-zappa-stage>
+```
+
+# Database Migrate
+
+```shell script
+zappa manage dev migrate
+```
+
+# Create superuser for admin
+
+```shell script
+zappa manage <my-zappa-stage> create_admin_user <nickname> <email> <password>
+```
+
+# Swagger
+
+- swagger endpoint: http://localhost:8000/swagger/
+- More info: [https://drf-yasg.readthedocs.io/en/stable/](https://drf-yasg.readthedocs.io/en/stable/)
+
+# License
+
+MIT License

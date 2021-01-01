@@ -1,0 +1,32 @@
+{
+    "dev": {
+        "aws_region": "ap-northeast-2",
+        "django_settings": "zappa_drf_mysql.settings.production",
+        "profile_name": "default",
+        "project_name": "zappa-drf-mysql",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-fe2nekfd",
+        "environment_variables": {
+            "prod_db_endpoint": "database.cluster-abcdefg123.ap-northeast-2.rds.amazonaws.com",
+            "prod_db_user": "root",
+            "prod_db_name": "database",
+            "prod_db_password": "password",
+            "prod_db_port": "3306",
+            "s3_bucket": "bucket-for-django-static-files",
+            "AWS_ACCESS_KEY_ID": "ABCDEFGHIJK",
+            "AWS_SECRET_ACCESS_KEY": "abcd23abcd1234abcd1234",
+            "AWS_REGION": "ap-northeast-2",
+            "DJANGO_SECRET_KEY": "d#wb9+ag$niwq1vxwho4a)#lbasbab@faf@)dF@3#!a3dff"
+        },
+        "vpc_config": {
+            "SubnetIds": [
+                "subnet-abcd1234",
+                "subnet-cdef1234",
+                "subnet-efgk5678"
+            ],
+            "SecurityGroupIds": [
+                "sg-abcd1234e"
+            ]
+        }
+    }
+}
