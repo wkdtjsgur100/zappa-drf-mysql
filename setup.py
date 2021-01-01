@@ -38,6 +38,7 @@ with open("zappa_settings.json", "r+", encoding='utf-8') as f:
     config["AWS_REGION"] = session.region_name
     config["DJANGO_SECRET_KEY"] = secret_key
     zappa_settings[zappa_stage_name]["environment_variables"] = config
+    zappa_settings[zappa_stage_name]["keep_warm"] = False
 
     is_set_vpc_config = input("You want to set vpc config? (default 'n') [y/n]")
 
