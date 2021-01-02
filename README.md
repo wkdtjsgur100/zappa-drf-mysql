@@ -7,6 +7,14 @@ Restful Serverless System with Zappa
 - [Django Rest Framework](https://www.django-rest-framework.org/) 3.12.2
 - [Zappa](https://github.com/Miserlou/Zappa) 0.52.0
 
+# Features
+
+- Integrated services for python serverless restful api 
+  - Swagger(for API Docs)
+  - zappa(for python Serverless)
+  - django rest framework(for restful api)
+  - Mysql(for relational database)
+
 # initial setup
 
 0. Input credential information into `~/.aws/credentials` file from AWS IAM
@@ -20,6 +28,8 @@ Restful Serverless System with Zappa
 2. Make S3 bucket and allow public access (or use cloud front for cdn)
 
 ```shell script
+git clone https://github.com/wkdtjsgur100/zappa-drf-mysql.git
+# activate virtualenv based on python 3.8.6 if you want
 pip install -r requirements.txt
 zappa init
 python ./setup.py
