@@ -15,13 +15,15 @@ DATABASES = {
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
+cloudfront_url = os.environ.get("cloudfront_url")
 AWS_STORAGE_BUCKET_NAME = os.environ.get("s3_bucket")
 AWS_S3_REGION_NAME = os.environ.get("AWS_REGION")
 AWS_S3_HOST = f"s3.{AWS_S3_REGION_NAME}.amazonaws.com"
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_HOST}"
-AWS_S3_OBJECT_PARAMETERS = {
-    "ACL": "public-read",
-}
+AWS_S3_CUSTOM_DOMAIN = cloudfront_url if cloudfront_url else f"{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_HOST}"
+if not cloudfront_url:
+    AWS_S3_OBJECT_PARAMETERS = {
+        "ACL": "public-read",
+    }
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
 STATICFILES_STORAGE = "zappa_drf_mysql.storages.ZappaS3Boto3Storage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]

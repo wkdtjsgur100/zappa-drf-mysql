@@ -18,15 +18,15 @@ Restful Serverless System with Zappa
 
 # Getting Started
 
-0. Input credential information into `~/.aws/credentials` file from AWS IAM
+1. Input credential information into `~/.aws/credentials` file from AWS IAM
    (or if aws cli is installed, run `aws configure`)
     ```text
     [zappa]
     aws_access_key_id = <AWS access key id>
     aws_secret_access_key = <AWS secret access key>
     ```
-1. Make database and get endpoint
-2. Make S3 bucket and allow public access (or use cloud front for cdn)
+2. Make database and get endpoint
+3. Make S3 bucket and allow public access (or use cloud front for cdn)
 
 ```shell script
 git clone https://github.com/wkdtjsgur100/zappa-drf-mysql.git

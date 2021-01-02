@@ -28,7 +28,13 @@ with open("zappa_settings.json", "r+", encoding='utf-8') as f:
     config["prod_db_name"] = input("Input database name of production database: ")
     config["prod_db_password"] = input("Input password name of production database: ")
     config["prod_db_port"] = input("Input port of production database(default 3306): ") or "3306"
-    config["s3_bucket"] = input("Input s3 bucket name of static files: ")
+
+    use_cloudfront = input("Do you use cloudfront for static files? (default 'n') [y/n]: ") or "n"
+
+    if use_cloudfront == "y":
+        config["cloudfront_url"] = input("Input cloudfront url: ").replace("https://", "").replace("http://", "")
+    else:
+        config["s3_bucket"] = input("Input s3 bucket name of static files: ")
 
     session = boto3.Session()
     credentials = session.get_credentials()
