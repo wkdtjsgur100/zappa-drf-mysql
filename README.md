@@ -7,6 +7,10 @@ Restful Serverless Architecture with Zappa
 - [Django Rest Framework](https://www.django-rest-framework.org/) 3.12.2
 - [Zappa](https://github.com/Miserlou/Zappa) 0.52.0
 
+# Documentation (Korean)
+
+https://wkdtjsgur100.github.io/zappa-mysql-django/
+
 # Features
 
 - Integrated services for python serverless restful api 
