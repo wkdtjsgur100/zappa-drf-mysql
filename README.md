@@ -1,6 +1,6 @@
 # DJANGO REST FRAMEWORK + ZAPPA + MYSQL
 
-Restful Serverless System with Zappa
+Restful Serverless Architecture with Zappa
 
 - Python 3.8.6
 - [Django](https://docs.djangoproject.com/) 3.1.4
@@ -25,8 +25,8 @@ Restful Serverless System with Zappa
     aws_access_key_id = <AWS access key id>
     aws_secret_access_key = <AWS secret access key>
     ```
-2. Make database and get endpoint
-3. Make S3 bucket and allow public access (or use cloud front for cdn)
+2. Make database and get endpoint(local, production)
+3. Make S3 bucket for static files and allow public access (or use cloud front for cdn)
 
 ```shell script
 git clone https://github.com/wkdtjsgur100/zappa-drf-mysql.git
