@@ -14,8 +14,9 @@ Restful Serverless System with Zappa
   - zappa(for python Serverless)
   - django rest framework(for restful api)
   - Mysql(for relational database)
+- Divided settings(base, local, production)
 
-# initial setup
+# Getting Started
 
 0. Input credential information into `~/.aws/credentials` file from AWS IAM
    (or if aws cli is installed, run `aws configure`)
@@ -37,7 +38,13 @@ zappa deploy <my-zappa-stage>
 zappa manage <my-zappa-stage> "collectstatic --noinput"
 ```
 
-# Update deployed code
+# Undeploy
+
+```shell script
+zappa undeploy <my-zappa-stage>
+```
+
+# Deploy updated code
 
 ```shell script
 zappa update <my-zappa-stage>
