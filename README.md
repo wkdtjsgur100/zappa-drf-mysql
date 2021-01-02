@@ -1,6 +1,6 @@
 # DJANGO REST FRAMEWORK + ZAPPA + MYSQL
 
-Restful Serverless Architecture with Zappa
+Serverless Restful Architecture with Zappa
 
 - Python 3.8.6
 - [Django](https://docs.djangoproject.com/) 3.1.4
